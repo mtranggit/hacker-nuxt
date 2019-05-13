@@ -38,6 +38,7 @@ module.exports = {
 
   axios: {
     // proxyHeaders: false
+    baseURL: 'https://hacker-news.firebaseio.com/v0/'
   },
 
   /*

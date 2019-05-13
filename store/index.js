@@ -1,4 +1,4 @@
-const baseUrl = 'https://hacker-news.firebaseio.com/v0/'
+// const baseUrl = 'https://hacker-news.firebaseio.com/v0/'
 
 export const state = () => ({
   items: []
@@ -22,11 +22,9 @@ export const actions = {
     /*
       ${baseUrl}askstories.json
     */
-    const ids = await this.$axios.$get(`${baseUrl}${dataUrl}`)
+    const ids = await this.$axios.$get(dataUrl)
     const tenIds = ids.slice(0, 10)
-    const itemsPromises = tenIds.map(id =>
-      this.$axios.$get(`${baseUrl}item/${id}.json`)
-    )
+    const itemsPromises = tenIds.map(id => this.$axios.$get(`item/${id}.json`))
     const items = await Promise.all(itemsPromises)
     const realItems = items.map(item =>
       item ? item : { title: 'Failed to load', id: 0 }
