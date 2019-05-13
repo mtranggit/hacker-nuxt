@@ -24,12 +24,12 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['tachyons/css/tachyons.css'],
+  css: ['tachyons/css/tachyons.css', '~/assets/main.css'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/filters'],
 
   /*
    ** Nuxt.js modules

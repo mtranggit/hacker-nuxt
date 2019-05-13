@@ -11,10 +11,7 @@ export default {
     Items
   },
   async fetch({ store }) {
-    await store.dispatch("LOAD_ITEMS", "topstories.json");
+    await store.dispatch("LOAD_ITEMS", "newstories.json");
   }
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
